@@ -1,0 +1,7 @@
+com\mmalaenko\model\Product$ProductBuilder.class
+com\mmalaenko\repository\impl\UserRepositoryImpl.class
+com\mmalaenko\repository\UserRepository.class
+com\mmalaenko\repository\ProductRepository.class
+com\mmalaenko\model\User$UserBuilder.class
+com\mmalaenko\model\User.class
+com\mmalaenko\model\Product.class

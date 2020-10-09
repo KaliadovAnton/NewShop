@@ -1,5 +1,7 @@
 D:\kaa\Shop\src\main\java\com\mmalaenko\repository\UserRepository.java
+D:\kaa\Shop\src\main\java\com\mmalaenko\utill\AppConfig.java
 D:\kaa\Shop\src\main\java\com\mmalaenko\service\ProductService.java
+D:\kaa\Shop\src\main\java\com\mmalaenko\utill\SpringContext.java
 D:\kaa\Shop\src\main\java\com\mmalaenko\service\UserService.java
 D:\kaa\Shop\src\main\java\com\mmalaenko\model\OrderGood.java
 D:\kaa\Shop\src\main\java\com\mmalaenko\utill\DataBaseInitialize.java

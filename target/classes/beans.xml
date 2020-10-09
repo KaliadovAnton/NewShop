@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+    <context:component-scan base-package="org.example"/>
+    <bean name="orderGoodService" class="com.mmalaenko.service.OrderGoodServiceImpl">
+        <constructor-arg ref="orderGoodRepository"/>
+    </bean>
+    <bean name="orderService" class="com.mmalaenko.service.OrderServiceImpl">
+        <constructor-arg ref="orderRepository"/>
+    </bean>
+    <bean name="productService" class="com.mmalaenko.service.ProductServiceImpl">
+        <constructor-arg ref="productRepository"/>
+    </bean>
+    <bean name="userService" class="com.mmalaenko.service.UserServiceImpl">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+    <bean name="orderGoodRepository" class="com.mmalaenko.repository.OrderGoodRepositoryImpl">
+    </bean>
+    <bean name="orderRepository" class="com.mmalaenko.repository.OrderRepositoryImpl">
+    </bean>
+    <bean name="productRepository" class="com.mmalaenko.repository.ProductRepositoryImpl">
+    </bean>
+    <bean name="userRepository" class="com.mmalaenko.repository.UserRepositoryImpl">
+    </bean>
+</beans>

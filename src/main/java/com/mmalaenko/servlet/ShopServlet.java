@@ -8,7 +8,9 @@ import com.mmalaenko.service.ProductService;
 import com.mmalaenko.service.UserService;
 import com.mmalaenko.service.impl.ProductServiceImpl;
 import com.mmalaenko.service.impl.UserServiceImpl;
+import com.mmalaenko.utill.SpringContext;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,8 +38,9 @@ public class ShopServlet extends HttpServlet {
 
     @Override
     public void init() {
-        userService=new UserServiceImpl(new UserRepositoryImpl());
-        productService= new ProductServiceImpl(new ProductRepositoryImpl());
+        AnnotationConfigApplicationContext context = SpringContext.getApplicationContext();
+        userService=context.getBean("userServiceImpl", UserServiceImpl.class);
+        productService= context.getBean("productServiceImpl", ProductServiceImpl.class);
 
     }
 

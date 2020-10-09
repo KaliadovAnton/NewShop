@@ -4,12 +4,15 @@ import com.mmalaenko.model.Order;
 import com.mmalaenko.repository.OrderRepository;
 import com.mmalaenko.utill.DBConnector;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@Repository
 public class OrderRepositoryImpl implements OrderRepository {
 
     private static final String SQL_SELECT_BY_USER_ID = "SELECT*FROM orders WHERE userID=?";

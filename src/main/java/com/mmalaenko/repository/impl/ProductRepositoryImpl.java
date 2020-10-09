@@ -5,6 +5,8 @@ import com.mmalaenko.model.User;
 import com.mmalaenko.repository.ProductRepository;
 import com.mmalaenko.utill.DBConnector;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
+@Repository
 public class ProductRepositoryImpl implements ProductRepository {
 
     private static final String SQL_SELECT_ALL_PRODUCTS = "SELECT*FROM products";

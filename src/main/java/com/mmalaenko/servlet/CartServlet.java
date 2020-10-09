@@ -3,20 +3,15 @@ package com.mmalaenko.servlet;
 import com.mmalaenko.model.Order;
 import com.mmalaenko.model.Product;
 import com.mmalaenko.model.User;
-import com.mmalaenko.repository.impl.OrderGoodRepositoryImpl;
-import com.mmalaenko.repository.impl.OrderRepositoryImpl;
-import com.mmalaenko.repository.impl.ProductRepositoryImpl;
-import com.mmalaenko.repository.impl.UserRepositoryImpl;
 import com.mmalaenko.service.OrderGoodService;
 import com.mmalaenko.service.OrderService;
-import com.mmalaenko.service.ProductService;
 import com.mmalaenko.service.UserService;
-import com.mmalaenko.service.impl.OrderGoodServiceImpl;
-import com.mmalaenko.service.impl.OrderServiceImpl;
-import com.mmalaenko.service.impl.ProductServiceImpl;
 import com.mmalaenko.service.impl.UserServiceImpl;
+import com.mmalaenko.utill.SpringContext;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
@@ -42,10 +37,10 @@ public class CartServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        userService = (UserService) context.getBean("userService");
-        orderService = (OrderService) context.getBean("orderService");
-        orderGoodService = (OrderGoodService) context.getBean("orderGoodService");
+        AnnotationConfigApplicationContext context = SpringContext.getApplicationContext();
+        userService = context.getBean("userServiceImpl", UserServiceImpl.class);
+        orderService = (OrderService) context.getBean("orderServiceImpl");
+        orderGoodService = (OrderGoodService) context.getBean("orderGoodServiceImpl");
     }
 
     @Override

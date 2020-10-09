@@ -3,12 +3,15 @@ package com.mmalaenko.repository.impl;
 import com.mmalaenko.repository.OrderGoodRepository;
 import com.mmalaenko.utill.DBConnector;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 @Slf4j
+@Repository
 public class OrderGoodRepositoryImpl implements OrderGoodRepository {
 
     public static final String SQL_INSERT_ORDER_GOOD = "INSERT INTO order_good(orderID,productID) VALUES(?,?)";

@@ -19,5 +19,4 @@
     <location>/WEB-INF/error-page.jsp</location>
 </error-page>
 
-
 </web-app>
